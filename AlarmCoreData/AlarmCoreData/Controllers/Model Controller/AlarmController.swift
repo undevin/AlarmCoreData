@@ -11,7 +11,7 @@ import CoreData
 class AlarmController: AlarmScheduler {
 
     static let shared = AlarmController()
-    // MARK:- Property
+    // MARK:- Properties
     /**
      Source of Truth
 
@@ -20,12 +20,10 @@ class AlarmController: AlarmScheduler {
 
      - returns: The results of our fetch request *or* an empty array
      */
-
-    var alarms: [Alarm] = []
-//    var alarms: [Alarm] {
-//        let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
-//        return (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
-//    }
+    var alarms: [Alarm] {
+        let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
+        return (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
+    }
 
     //MARK: - CRUD
 
@@ -43,7 +41,7 @@ class AlarmController: AlarmScheduler {
         /// Schedule the alert
         scheduleUserNotification(for: alarm)
         /// Save the alarm
-        saveToPersistentStore() // defined below
+        saveToPersistentStore()
     }
 
     // Update
@@ -73,15 +71,13 @@ class AlarmController: AlarmScheduler {
      Toggles a Alarm object's `isEnabled` boolean value and and calls the `saveToPersistentStore()` method to save it to persistent storage with the updated value
 
      - Parameters:
-        - task: The Task that is being updated
+        - alarm: The `Alarm` that is being updated
      */
     func toggleIsEnabledFor(alarm: Alarm) {
-        /// Update the isEnabled Property on the alarm to the opposite state
+        /// Update the isEnabled Property on the `alarm` to the opposite state
         alarm.isEnabled = !alarm.isEnabled
-        /// I want this in the Model Controller because the isEnabled is a property on my model. We use a ternay operator below. If the alarm.isEnabled is equal to true, it will schedule the alert. Otherwise, it will cancel it.
-
+        /// I want this in the Model Controller because the `isEnabled` is a property on my model. We use a ternay operator below. If the `alarm.isEnabled` is equal to `true`, it will schedule the alert. Otherwise, it will cancel it.
         alarm.isEnabled ? scheduleUserNotification(for: alarm) : cancelUserNotification(for: alarm)
-
         /// Save it
         saveToPersistentStore()
     }
@@ -94,29 +90,22 @@ class AlarmController: AlarmScheduler {
         - alarm: The `Alarm` to be removed from storage
      */
     func delete(alarm: Alarm) {
+        /// Cancel any pending alerts
         cancelUserNotification(for: alarm)
+        /// Delete the object
         CoreDataStack.context.delete(alarm)
+        /// Save the Changes
         saveToPersistentStore()
     }
 
     /**
-     Saves the current CoreDataStack's context to persistent storage by calling the `save()` method
+     Saves the current `CoreDataStack's` context to persistent storage by calling the `save()` method
      */
     private func saveToPersistentStore() {
         do {
             try CoreDataStack.context.save()
         } catch {
             print("Error saving Managed Object Context, item not saved")
-        }
-    }
-
-    func loadFromPersistentStore() {
-        let fetchRequest: NSFetchRequest<Alarm> = Alarm.fetchRequest()
-        do {
-           let loadedAlarms = try CoreDataStack.context.fetch(fetchRequest)
-            alarms = loadedAlarms
-        } catch {
-            print("Failed to Load from Persistent Store \(error) \(error.localizedDescription)")
         }
     }
 } // End of class

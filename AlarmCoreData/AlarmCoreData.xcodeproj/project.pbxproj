@@ -18,6 +18,9 @@
 		FBF6700025B758BD0038F7AC /* Alarm+Convienience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF66FFF25B758BD0038F7AC /* Alarm+Convienience.swift */; };
 		FBF6700B25B7FC040038F7AC /* AlarmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6700A25B7FC040038F7AC /* AlarmController.swift */; };
 		FBF6700F25B7FDA40038F7AC /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6700E25B7FDA40038F7AC /* AlarmScheduler.swift */; };
+		FBF6701725B8086B0038F7AC /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6701625B8086B0038F7AC /* AlarmTableViewCell.swift */; };
+		FBF6701D25B808940038F7AC /* AlarmsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6701C25B808940038F7AC /* AlarmsListTableViewController.swift */; };
+		FBF6702125B808AE0038F7AC /* AlarmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF6702025B808AE0038F7AC /* AlarmDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		FBF66FFF25B758BD0038F7AC /* Alarm+Convienience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+Convienience.swift"; sourceTree = "<group>"; };
 		FBF6700A25B7FC040038F7AC /* AlarmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmController.swift; sourceTree = "<group>"; };
 		FBF6700E25B7FDA40038F7AC /* AlarmScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
+		FBF6701625B8086B0038F7AC /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		FBF6701C25B808940038F7AC /* AlarmsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsListTableViewController.swift; sourceTree = "<group>"; };
+		FBF6702025B808AE0038F7AC /* AlarmDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		FBF6700825B7FBE10038F7AC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FBF6701525B808480038F7AC /* View Controllers */,
 				FBF6700925B7FBF00038F7AC /* Model Controller */,
 			);
 			path = Controllers;
@@ -136,6 +143,24 @@
 				FBF6700E25B7FDA40038F7AC /* AlarmScheduler.swift */,
 			);
 			path = "Custom Protocols";
+			sourceTree = "<group>";
+		};
+		FBF6701525B808480038F7AC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBF6701C25B808940038F7AC /* AlarmsListTableViewController.swift */,
+				FBF6702025B808AE0038F7AC /* AlarmDetailTableViewController.swift */,
+				FBF6701A25B8086E0038F7AC /* Custom Cells */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FBF6701A25B8086E0038F7AC /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FBF6701625B8086B0038F7AC /* AlarmTableViewCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,10 +237,13 @@
 				FBF66FDA25B755D40038F7AC /* AppDelegate.swift in Sources */,
 				FBF66FE425B755D40038F7AC /* AlarmCoreData.xcdatamodeld in Sources */,
 				FBF6700F25B7FDA40038F7AC /* AlarmScheduler.swift in Sources */,
+				FBF6702125B808AE0038F7AC /* AlarmDetailTableViewController.swift in Sources */,
 				FBF66FDC25B755D40038F7AC /* SceneDelegate.swift in Sources */,
+				FBF6701D25B808940038F7AC /* AlarmsListTableViewController.swift in Sources */,
 				FBF66FFA25B758070038F7AC /* CoreDataStack.swift in Sources */,
 				FBF6700025B758BD0038F7AC /* Alarm+Convienience.swift in Sources */,
 				FBF6700B25B7FC040038F7AC /* AlarmController.swift in Sources */,
+				FBF6701725B8086B0038F7AC /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

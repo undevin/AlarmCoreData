@@ -10,10 +10,8 @@ import CoreData
 
 extension Alarm {
 
-    /// `@discarableResult` indicates we have the option of ignoring the returned value from the initializer
-    @discardableResult
     /**
-     Initializes a Alarm object from a context
+     Conveniently Initializes a Alarm object from a context
 
      - Parameters:
         - title: String value for the title attribute
@@ -22,7 +20,6 @@ extension Alarm {
         - uuid: A randomly generated unique identifier. We use this string to keep track of each Alarm `Object`
         - context: The NSManagedObjectContext for the app, default value set to the CoreDataStack class's context property
      */
-
     convenience init(title: String, isEnabled: Bool = true, fireDate: Date, uuid: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.context) {
 
         self.init(context: context)
