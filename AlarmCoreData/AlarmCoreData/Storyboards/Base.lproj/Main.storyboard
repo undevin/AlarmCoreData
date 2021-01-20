@@ -67,12 +67,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Alarms" id="pxx-rf-awk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G96-5B-eYq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G96-5B-eYq">
+                            <connections>
+                                <segue destination="QS6-gl-Qhw" kind="show" id="qNC-c7-ziD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9c-3U-Erb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455.07246376811599" y="93.75"/>
+            <point key="canvasLocation" x="359" y="94"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="4Fk-oz-p2w">
@@ -85,15 +89,15 @@
                         <sections>
                             <tableViewSection headerTitle="(Date Picker)" id="s3o-bA-sM2">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="AUM-HA-Pdc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AUM-HA-Pdc">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AUM-HA-Pdc" id="NHJ-gd-tVR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-Xx-dfS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-Xx-dfS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                                     <color key="backgroundColor" red="0.102625601" green="0.14047515390000001" blue="0.1764756143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="tintColor" red="0.95001000170000005" green="0.66480565069999997" blue="0.23398077489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </datePicker>
@@ -196,6 +200,9 @@
             <point key="canvasLocation" x="-455.07246376811599" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Abf-EX-AXH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
