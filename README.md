@@ -267,7 +267,7 @@ Build and run the application. Check for bugs. At this point you should have a s
 
 ---
 
-# Part Three - Register the App for UserNotifications
+# Part Four - Register the App for UserNotifications
 Register for local notifications when the app launches.
 
 1. In the `AppDelegate.swift` file adopt the  `UNUserNotificationCenterDelegate` protocol.
