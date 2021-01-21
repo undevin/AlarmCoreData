@@ -10,7 +10,7 @@ Fork, then clone this repository. Change your working branch to `Starter`.
 
 Take a moment to look through the project and get familiar with the current state. Notice that the `starter` branch includes an Xcode project with `CoreData` already imported. Other points to note include:  `xcdatamodel` is blank, the project has been organized into a basic file structure, your `info.plist` has been moved to `Resources` and its file path updated, and the project's default `ViewController` has been deleted. 
 
-Tip: If you don’t see anything in your project of file folder, you likely need to pull from the remote starter branch.
+Tip: If you don’t see anything in your project or file folder, you likely need to pull from the remote starter branch.
 
 On the `storyboard` file you should see two `TableViewControllers`. The first `TableViewController` has a custom cell with two labels, and a UI Switch. The labels have default text that signifies what data they will showcase. The Switch is set to `On` and will be used to toggle if the alarm is active or not. 
 
@@ -246,9 +246,9 @@ func designIsEnabledButton() {
 
 ### Implement the saveButtonTapped
 
-1. Unwrap the `text` from the `alarmTitleTextField`, and check to make sure the value is `not` an empty string.
+1. Unwrap the `text` from the `alarmTitleTextField`, and check to make sure the value is not an empty string.
 2. Conditionally unwrap the `alarm` receiver
-    1. If the `receiver` has a valid value call your `update(alarm:` function from your `sharedInstance`
+    1. If the `receiver` has a valid value, call your `update(alarm:` function from your `sharedInstance`
     2. If the `reciever` does not have a valid value, call your `createAlarm(withTitle)` function from your `sharedInstance`
 3. Pop this ViewController off the view stack 
 
