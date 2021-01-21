@@ -47,7 +47,7 @@ extension AlarmScheduler {
         /// Creates the trigger for the User notification. We create our `DateComponents` using the current time from our `alarm.fireDate`.
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         /// Create the request. Note that we are using the `UUID` from the alarm. This is how we are identifying what `Alarm` object to trigger.
-        let request = UNNotificationRequest(identifier: alarm.uuid!, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: alarm.uuidString!, content: content, trigger: trigger)
         /// Add it all together
         UNUserNotificationCenter.current().add(request) { (error) in
             if let error = error{
@@ -64,6 +64,6 @@ extension AlarmScheduler {
      */
     func cancelUserNotification(for alarm: Alarm){
         /// Canceling the User Notification. Note we use the `UUID` from the `alarm` to identify the User Notification to cancel. This can take in an array of alarms, but we will only give it one at at time.
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [alarm.uuid!])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [alarm.uuidString!])
     }
 }

@@ -22,12 +22,12 @@ class AlarmsListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return AlarmController.shared.alarms.count
+        return AlarmController.sharedInstance.alarms.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as? AlarmTableViewCell else {return UITableViewCell()}
-        let alarm = AlarmController.shared.alarms[indexPath.row]
+        let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
         cell.delegate = self
         cell.updateViews(with: alarm)
 
@@ -37,8 +37,8 @@ class AlarmsListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let alarm = AlarmController.shared.alarms[indexPath.row]
-            AlarmController.shared.delete(alarm: alarm)
+            let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
+            AlarmController.sharedInstance.delete(alarm: alarm)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -56,7 +56,7 @@ class AlarmsListTableViewController: UITableViewController {
             //destination: where am I trying to go?
             guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? AlarmDetailTableViewController else { return }
             //object to send: What am I trying to pass?
-            let alarm = AlarmController.shared.alarms[indexPath.row]
+            let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
             //object to receive it: who's going to "catch this object?
             destinationVC.alarm = alarm
         }
@@ -72,9 +72,9 @@ extension AlarmsListTableViewController: AlarmTableViewCellDelegate {
         // Get the indexPath of the the sender; I.E. the cell
         guard let indexPath = tableView.indexPath(for: sender) else { return }
         // Use that index to get the Alarm we need
-        let alarm = AlarmController.shared.alarms[indexPath.row]
+        let alarm = AlarmController.sharedInstance.alarms[indexPath.row]
         // Use our Model Controller to handle the isEnabled Property
-        AlarmController.shared.toggleIsEnabledFor(alarm: alarm)
+        AlarmController.sharedInstance.toggleIsEnabledFor(alarm: alarm)
         // Have the cell Update
         sender.updateViews(with: alarm)
     }

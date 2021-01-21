@@ -39,7 +39,7 @@ class AlarmDetailTableViewController: UITableViewController {
             alarmIsEnabledButton.backgroundColor = .white
             alarmIsEnabledButton.setTitle("Enabled", for: .normal)
         case false:
-            alarmIsEnabledButton.backgroundColor = UIColor.darkGray
+            alarmIsEnabledButton.backgroundColor = .darkGray
             alarmIsEnabledButton.setTitle("Disabled", for: .normal)
         }
     }
@@ -50,16 +50,16 @@ class AlarmDetailTableViewController: UITableViewController {
 
 
         if let alarm = alarm{
-            AlarmController.shared.update(alarm: alarm, newTitle: title, newFireDate: alarmFireDatePicker.date, isEnabled: isAlarmOn)
+            AlarmController.sharedInstance.update(alarm: alarm, newTitle: title, newFireDate: alarmFireDatePicker.date, isEnabled: isAlarmOn)
         } else{
-            AlarmController.shared.createAlarm(withTitle: title, and: alarmFireDatePicker.date)
+            AlarmController.sharedInstance.createAlarm(withTitle: title, and: alarmFireDatePicker.date)
         }
         self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func alarmIsEnabledButtonTapped(_ sender: Any) {
         if let alarm = alarm {
-            AlarmController.shared.toggleIsEnabledFor(alarm: alarm)
+            AlarmController.sharedInstance.toggleIsEnabledFor(alarm: alarm)
             isAlarmOn = alarm.isEnabled
         }else{
             isAlarmOn = !isAlarmOn

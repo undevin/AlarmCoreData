@@ -12,7 +12,7 @@ The protocol we will use to handle the updating of the cell when the `isEnabledB
    - `class`: This protocol can interact with class level objects
 
 Step One:
-   - Define the protocol. This will need to interact with class level objects and define the task we want our delegate to handle.
+   - Define the protocol. This will need to interact with class level objects.
 
 Delegate Methods:
    - alarmWasToggled(sender: AlarmTableViewCell)

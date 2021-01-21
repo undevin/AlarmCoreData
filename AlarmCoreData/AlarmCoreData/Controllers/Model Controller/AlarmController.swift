@@ -10,7 +10,7 @@ import CoreData
 
 class AlarmController: AlarmScheduler {
 
-    static let shared = AlarmController()
+    static let sharedInstance = AlarmController()
     // MARK:- Properties
     /**
      Source of Truth

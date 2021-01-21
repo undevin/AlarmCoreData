@@ -4,7 +4,7 @@
         <attribute name="fireDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <attribute name="uuidString" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Alarm" positionX="-63" positionY="-18" width="128" height="89"/>
